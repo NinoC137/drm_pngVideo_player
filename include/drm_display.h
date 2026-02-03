@@ -29,7 +29,11 @@ private:
         uint32_t handle;
         uint32_t pitch;
         uint8_t *map;
-    } buffer_;
+    };
+    
+    struct DrmBuffer buffer_[2];
+    int front_idx_ = 0;
+    int back_idx_ = 1;
 
     uint32_t connector_id_;
     uint32_t crtc_id_;
