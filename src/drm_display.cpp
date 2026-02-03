@@ -53,7 +53,7 @@ bool DrmDisplay::init(uint32_t width, uint32_t height) {
 
 bool DrmDisplay::create_drm_buffer() {
     for(int i = 0; i < 2; i++) { //创建双缓冲区
-        struct drm_mode_create_Cdumb create_req = {};
+        drm_mode_create_dumb create_req = {};
         create_req.width = width_;
         create_req.height = height_;
         create_req.bpp = 32; //目标外设是ARGB8888格式
